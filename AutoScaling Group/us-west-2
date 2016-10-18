@@ -1,0 +1,12 @@
+resource "aws_autoscaling_group" "cuteelephantgroup" {
+    desired_capacity          = 2
+    health_check_grace_period = 60
+    health_check_type         = "ELB"
+    launch_configuration      = "cuteelephantgroup"
+    max_size                  = 2
+    min_size                  = 2
+    name                      = "cuteelephantgroup"
+    vpc_zone_identifier       = ["subnet-35f1de51", "subnet-b5dc9bc3", "subnet-3daf2b65"]
+
+}
+

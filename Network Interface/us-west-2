@@ -1,11 +1,18 @@
-resource "aws_network_interface" "eni-75b27134" {
+resource "aws_network_interface" "eni-a0855ee1" {
     subnet_id         = "subnet-b5dc9bc3"
-    private_ips       = ["172.31.33.124"]
+    private_ips       = ["172.31.46.55"]
     security_groups   = ["sg-16e1566f"]
     source_dest_check = true
     attachment {
-        instance     = "i-9d9e8e85"
+        instance     = "i-28d0ce30"
         device_index = 0
     }
+}
+
+resource "aws_network_interface" "eni-2e11ca6f" {
+    subnet_id         = "subnet-b5dc9bc3"
+    private_ips       = ["172.31.42.173"]
+    security_groups   = ["sg-16e1566f"]
+    source_dest_check = true
 }
 
