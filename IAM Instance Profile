@@ -1,0 +1,6 @@
+resource "aws_iam_instance_profile" "EC2-S3-Admin" {
+    name  = "EC2-S3-Admin"
+    path  = "/"
+    roles = ["EC2-S3-Admin"]
+}
+

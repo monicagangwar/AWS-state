@@ -1,0 +1,20 @@
+resource "aws_subnet" "subnet-b809aed0-subnet-b809aed0" {
+    vpc_id                  = "vpc-3804e650"
+    cidr_block              = "172.31.0.0/20"
+    availability_zone       = "eu-central-1a"
+    map_public_ip_on_launch = true
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-10ae5a6a-subnet-10ae5a6a" {
+    vpc_id                  = "vpc-3804e650"
+    cidr_block              = "172.31.16.0/20"
+    availability_zone       = "eu-central-1b"
+    map_public_ip_on_launch = true
+
+    tags {
+    }
+}
+

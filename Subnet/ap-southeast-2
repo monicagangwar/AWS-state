@@ -1,0 +1,30 @@
+resource "aws_subnet" "subnet-de30f187-subnet-de30f187" {
+    vpc_id                  = "vpc-a24953c7"
+    cidr_block              = "172.31.16.0/20"
+    availability_zone       = "ap-southeast-2c"
+    map_public_ip_on_launch = true
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-8e13dcf8-subnet-8e13dcf8" {
+    vpc_id                  = "vpc-a24953c7"
+    cidr_block              = "172.31.32.0/20"
+    availability_zone       = "ap-southeast-2a"
+    map_public_ip_on_launch = true
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-1a35947e-subnet-1a35947e" {
+    vpc_id                  = "vpc-a24953c7"
+    cidr_block              = "172.31.0.0/20"
+    availability_zone       = "ap-southeast-2b"
+    map_public_ip_on_launch = true
+
+    tags {
+    }
+}
+

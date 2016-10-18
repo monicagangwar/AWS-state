@@ -1,0 +1,52 @@
+resource "aws_security_group" "vpc-a2310bc6-default" {
+    name        = "default"
+    description = "default VPC security group"
+    vpc_id      = "vpc-a2310bc6"
+
+    ingress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        security_groups = []
+        self            = true
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+
+resource "aws_security_group" "vpc-a2310bc6-MonSG" {
+    name        = "MonSG"
+    description = "MonSG"
+    vpc_id      = "vpc-a2310bc6"
+
+    ingress {
+        from_port       = 80
+        to_port         = 80
+        protocol        = "tcp"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port       = 22
+        to_port         = 22
+        protocol        = "tcp"
+        cidr_blocks     = ["156.107.138.10/32"]
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+

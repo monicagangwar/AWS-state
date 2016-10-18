@@ -1,0 +1,12 @@
+resource "aws_route_table" "rtb-a0beddc9" {
+    vpc_id     = "vpc-2306984a"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = "igw-6485240d"
+    }
+
+    tags {
+    }
+}
+

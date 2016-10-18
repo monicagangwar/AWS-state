@@ -1,0 +1,7 @@
+resource "aws_internet_gateway" "igw-a3f416c4" {
+    vpc_id = "vpc-9180d2f6"
+
+    tags {
+    }
+}
+

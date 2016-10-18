@@ -1,0 +1,26 @@
+resource "aws_network_acl" "acl-ef539c8b" {
+    vpc_id     = "vpc-a24953c7"
+    subnet_ids = ["subnet-de30f187", "subnet-8e13dcf8", "subnet-1a35947e"]
+
+    ingress {
+        from_port  = 0
+        to_port    = 0
+        rule_no    = 100
+        action     = "allow"
+        protocol   = "-1"
+        cidr_block = "0.0.0.0/0"
+    }
+
+    egress {
+        from_port  = 0
+        to_port    = 0
+        rule_no    = 100
+        action     = "allow"
+        protocol   = "-1"
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags {
+    }
+}
+

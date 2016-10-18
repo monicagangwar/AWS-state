@@ -1,0 +1,6 @@
+resource "aws_iam_group_membership" "Admin" {
+    name  = "Admin-group-membership"
+    users = ["monicagangwar"]
+    group = "Admin"
+}
+
