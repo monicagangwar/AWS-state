@@ -1,23 +1,3 @@
-resource "aws_launch_configuration" "cuteelephantgroup" {
-    name                        = "cuteelephantgroup"
-    image_id                    = "ami-b04e92d0"
-    instance_type               = "t2.micro"
-    iam_instance_profile        = "EC2-S3-Admin"
-    key_name                    = "MonEc2"
-    security_groups             = ["sg-16e1566f"]
-    associate_public_ip_address = 
-    user_data                   = "IyEvYmluL2Jhc2gKeXVtIHVwZGF0ZSAteQp5dW0gaW5zdGFsbCBodHRwZCAteQphd3MgczMgY3AgczM6Ly9hY3V0ZWVsZXBoYW50IC0tcmVjdXJzaXZlCnNlcnZpY2UgaHR0cGQgc3RhcnQKY2hrY29uZmlnIGh0dHBkIG9u"
-    enable_monitoring           = false
-    ebs_optimized               = false
-
-    root_block_device {
-        volume_type           = "gp2"
-        volume_size           = 8
-        delete_on_termination = true
-    }
-
-}
-
 resource "aws_launch_configuration" "cuteelephantgroupCopy" {
     name                        = "cuteelephantgroupCopy"
     image_id                    = "ami-b04e92d0"
