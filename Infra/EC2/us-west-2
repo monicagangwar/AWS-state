@@ -23,6 +23,31 @@ resource "aws_instance" "USwest2b" {
     }
 }
 
+resource "aws_instance" "i-955c3c01" {
+    ami                         = "ami-b04e92d0"
+    availability_zone           = "us-west-2a"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = "MonEc2"
+    subnet_id                   = "subnet-b5dc9bc3"
+    vpc_security_group_ids      = ["sg-16e1566f"]
+    associate_public_ip_address = true
+    private_ip                  = "172.31.37.252"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        iops                  = 100
+        delete_on_termination = true
+    }
+
+    tags {
+        "aws:autoscaling:groupName" = "acuteelephant"
+    }
+}
+
 resource "aws_instance" "USwest2a" {
     ami                         = "ami-5ec1673e"
     availability_zone           = "us-west-2a"
