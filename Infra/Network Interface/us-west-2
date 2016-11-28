@@ -1,7 +1,39 @@
+resource "aws_network_interface" "eni-f8ba3eb8" {
+    subnet_id         = "subnet-b5dc9bc3"
+    private_ips       = ["172.31.36.247"]
+    security_groups   = ["sg-f241b18b"]
+    source_dest_check = true
+}
+
+resource "aws_network_interface" "eni-569a8928" {
+    subnet_id         = "subnet-35f1de51"
+    private_ips       = ["172.31.17.119"]
+    security_groups   = ["sg-f241b18b"]
+    source_dest_check = true
+}
+
+resource "aws_network_interface" "eni-1e45c15e" {
+    subnet_id         = "subnet-b5dc9bc3"
+    private_ips       = ["172.31.47.115"]
+    security_groups   = ["sg-16e1566f"]
+    source_dest_check = true
+    attachment {
+        instance     = "i-ba42222e"
+        device_index = 0
+    }
+}
+
 resource "aws_network_interface" "eni-5222e212" {
     subnet_id         = "subnet-b5dc9bc3"
     private_ips       = ["172.31.37.221"]
     security_groups   = ["sg-16e1566f"]
+    source_dest_check = true
+}
+
+resource "aws_network_interface" "eni-e7f6e2b6" {
+    subnet_id         = "subnet-3daf2b65"
+    private_ips       = ["172.31.3.157"]
+    security_groups   = ["sg-f241b18b"]
     source_dest_check = true
 }
 

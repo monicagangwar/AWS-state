@@ -1,14 +1,14 @@
-resource "aws_instance" "bashinstance" {
-    ami                         = "ami-b04e92d0"
-    availability_zone           = "us-west-2a"
+resource "aws_instance" "USwest2b" {
+    ami                         = "ami-5ec1673e"
+    availability_zone           = "us-west-2b"
     ebs_optimized               = false
     instance_type               = "t2.micro"
     monitoring                  = false
     key_name                    = "MonEc2"
-    subnet_id                   = "subnet-b5dc9bc3"
-    vpc_security_group_ids      = ["sg-16e1566f"]
+    subnet_id                   = "subnet-35f1de51"
+    vpc_security_group_ids      = ["sg-f241b18b", "sg-16e1566f"]
     associate_public_ip_address = true
-    private_ip                  = "172.31.46.55"
+    private_ip                  = "172.31.31.119"
     source_dest_check           = true
 
     root_block_device {
@@ -19,7 +19,32 @@ resource "aws_instance" "bashinstance" {
     }
 
     tags {
-        "Name" = "bashinstance"
+        "Name" = "USwest2b"
+    }
+}
+
+resource "aws_instance" "USwest2a" {
+    ami                         = "ami-5ec1673e"
+    availability_zone           = "us-west-2a"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = "MonEc2"
+    subnet_id                   = "subnet-b5dc9bc3"
+    vpc_security_group_ids      = ["sg-f241b18b", "sg-16e1566f"]
+    associate_public_ip_address = true
+    private_ip                  = "172.31.47.115"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        iops                  = 100
+        delete_on_termination = true
+    }
+
+    tags {
+        "Name" = "USwest2a"
     }
 }
 
