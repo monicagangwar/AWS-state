@@ -4,3 +4,9 @@ resource "aws_iam_instance_profile" "EC2-S3-Admin" {
     roles = ["EC2-S3-Admin"]
 }
 
+resource "aws_iam_instance_profile" "random" {
+    name  = "random"
+    path  = "/"
+    roles = ["random"]
+}
+
