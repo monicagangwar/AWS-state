@@ -1,7 +1,7 @@
-resource "aws_network_interface" "eni-f8ba3eb8" {
+resource "aws_network_interface" "eni-784eca38" {
     subnet_id         = "subnet-b5dc9bc3"
-    private_ips       = ["172.31.36.247"]
-    security_groups   = ["sg-f241b18b"]
+    private_ips       = ["172.31.42.97"]
+    security_groups   = ["sg-16e1566f"]
     source_dest_check = true
 }
 
@@ -12,10 +12,24 @@ resource "aws_network_interface" "eni-569a8928" {
     source_dest_check = true
 }
 
+resource "aws_network_interface" "eni-d09f8cae" {
+    subnet_id         = "subnet-35f1de51"
+    private_ips       = ["172.31.30.202"]
+    security_groups   = ["sg-16e1566f"]
+    source_dest_check = true
+}
+
+resource "aws_network_interface" "eni-f8ba3eb8" {
+    subnet_id         = "subnet-b5dc9bc3"
+    private_ips       = ["172.31.36.247"]
+    security_groups   = ["sg-f241b18b"]
+    source_dest_check = true
+}
+
 resource "aws_network_interface" "eni-1e45c15e" {
     subnet_id         = "subnet-b5dc9bc3"
     private_ips       = ["172.31.47.115"]
-    security_groups   = ["sg-16e1566f"]
+    security_groups   = ["sg-f241b18b", "sg-16e1566f"]
     source_dest_check = true
     attachment {
         instance     = "i-ba42222e"
@@ -23,11 +37,15 @@ resource "aws_network_interface" "eni-1e45c15e" {
     }
 }
 
-resource "aws_network_interface" "eni-5222e212" {
-    subnet_id         = "subnet-b5dc9bc3"
-    private_ips       = ["172.31.37.221"]
-    security_groups   = ["sg-16e1566f"]
+resource "aws_network_interface" "eni-ec809392" {
+    subnet_id         = "subnet-35f1de51"
+    private_ips       = ["172.31.31.119"]
+    security_groups   = ["sg-f241b18b", "sg-16e1566f"]
     source_dest_check = true
+    attachment {
+        instance     = "i-7a9104ef"
+        device_index = 0
+    }
 }
 
 resource "aws_network_interface" "eni-e7f6e2b6" {
