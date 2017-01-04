@@ -104,6 +104,8 @@ for service,service_id in services.iteritems():
 
 os.chdir(cur_dir)
 err = None
+_,err = run_cmd(['git','init'])
+_,err = run_cmd(['git','remote','add','git@github.mdl.cloud:monica-gangwar/terraforming.git'])
 _,err = run_cmd(['git','add',dir_name])
 commit_message = 'Infra at ' + str(datetime.datetime.now()) 
 _,err = run_cmd(['git','commit','-m',commit_message])
